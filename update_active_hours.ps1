@@ -3,7 +3,7 @@ $registryPath = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
 if (Test-Path -Path "${registryPath}") {
   $currentHour = (Get-Date).hour
   $activeHoursStart = $currentHour
-  $activeHoursEnd = $activeHoursStart + 12
+  $activeHoursEnd = $activeHoursStart + 18
   if ($activeHoursEnd -gt 23) {
     $activeHoursEnd = $activeHoursEnd - 24
   }
