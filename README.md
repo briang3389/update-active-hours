@@ -1,6 +1,6 @@
 # Update Active Hours
 
-Windows 10 Home does not allow users to shut off forced reboots that are caused by automatic updates. However, the user can set up to 12 Active Hours, during which the computer will not reboot. These scripts setup a scheduled task on the computer that runs every six hours. The scheduled task executes a powershell script that updates the registry values for the Active Hours start and end times so that the current time is always in Active Hours. This prevents the system from ever initiating a forced reboot.
+Windows 10 Home does not allow users to shut off forced reboots that are caused by automatic updates. However, the user can set up to 18 Active Hours, during which the computer will not reboot. These scripts setup a scheduled task on the computer that runs every six hours. The scheduled task executes a powershell script that updates the registry values for the Active Hours start and end times so that the current time is always in Active Hours. This prevents the system from ever initiating a forced reboot.
 
 ## Usage
 
@@ -20,6 +20,7 @@ Default Example:
 
 ```powershell
 PS C:\> . "C:\Path To Script\active_hours_scheduled_task.ps1"
+PS C:\> Powershell.exe -ExecutionPolicy Unrestricted -File "C:\Path To Script\active_hours_scheduled_task.ps1"
 ```
 
 Custom Example:
