@@ -66,5 +66,8 @@ if ($deleteTask) {
     Write-Output "Creating scheduled task: ${taskName}."
     Unblock-File -Path "${scriptLocation}"
     SCHTASKS.exe /Create /RU "SYSTEM" /TN "${taskName}" /xml "update_active_hours.xml"
+    if ($scriptLocation) {
+      SCHTASKS.exe /CHANGE /TN "${taskName}" /TR "Powershell.exe -ExecutionPolicy Unrestricted -File ${scriptLocation}"
+    }
   }
 }
